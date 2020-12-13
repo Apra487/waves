@@ -1,0 +1,35 @@
+.player {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 15vh;
+    .time-control {
+        // background-color: rgb(88, 77, 189);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        input {
+            padding: 1rem 0rem;
+            width: 90%;
+        }
+        p {
+            padding: 1.5rem;
+        }
+    }
+    .play-control{
+        width: 33%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        svg {
+            padding: 0.2rem;
+            cursor: pointer;
+        }
+    }
+
+}
+
+
