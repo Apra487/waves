@@ -1,68 +1,68 @@
 .library {
-    padding: 2rem 0rem 0rem ;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 25rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    box-shadow: 2px 2px 50px rgb(190, 188, 188);
-    background: white;
-    transform: translateX(-100%);
-    transition: all 0.5s ease;
-    opacity: 0;
-    h2 {
-        padding-bottom: 2rem;
-        align-self: center;
-    }
+	padding: 2rem 0rem 0rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 25rem;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	box-shadow: 2px 2px 50px rgb(190, 188, 188);
+	background: white;
+	transform: translateX(-100%);
+	transition: all 0.5s ease;
+	opacity: 0;
+	h2 {
+		padding-bottom: 2rem;
+		align-self: center;
+	}
 }
-.library-songs{
-    padding: 2rem 0em 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
+.library-songs {
+	padding: 2rem 0em 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 .librarySong {
-    padding: 0rem 1em 0rem;
-    display: flex; 
-    flex-direction: row;
-    overflow: scroll;
-    cursor: pointer;
-    img {
-        width: 10rem;
-        padding: 1.5rem;
-    }
-    &:hover{
-        background: rgb(223, 223, 255);
-    }
-    .info{
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: baseline;
-        h3 {
-            font-size: 1.1rem;
-        }
-        h4 {
-            font-size: 0.8rem;
-        }
-    }
-
-
-    
-    
+	padding: 0rem 1em 0rem;
+	display: flex;
+	flex-direction: row;
+	overflow: scroll;
+	cursor: pointer;
+	img {
+		width: 10rem;
+		padding: 1.5rem;
+	}
+	&:hover {
+		background: rgb(223, 223, 255);
+	}
+	.info {
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: baseline;
+		h3 {
+			font-size: 1.1rem;
+		}
+		h4 {
+			font-size: 0.8rem;
+		}
+	}
 }
 
 .selected {
-    background: rgb(202, 194, 248);
+	background: rgb(202, 194, 248);
 }
 
 .active-library {
-    transform: translateX(0%);
-    opacity: 1;
-  }
+	transform: translateX(0%);
+	opacity: 1;
+}
 
+@media screen and (max-width: 768px) {
+	.library {
+		width: 100%;
+    }
+}

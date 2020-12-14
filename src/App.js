@@ -34,7 +34,7 @@ function App() {
 	const debouncedSave = useCallback(
 		debounce(
 			playHandle,
-			200
+			300
 		),
 		[]
 	);

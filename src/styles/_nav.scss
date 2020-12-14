@@ -1,22 +1,54 @@
 nav {
-    min-height: 13vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    button {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      border: 2px solid rgb(65, 65, 65);
-      transition: all 0.3s ease;
-      &:hover {
-        background: rgb(65, 65, 65);
-        color: white;
-      }
+	min-height: 13vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	button {
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem;
+		border: 2px solid rgb(65, 65, 65);
+		transition: all 0.3s ease;
+		&:hover {
+			background: rgb(65, 65, 65);
+			color: white;
+		}
+	}
+	.library-active {
+		background: rgb(65, 65, 65);
+		color: white;
+	}
+}
+
+@media screen and (max-width: 1028px) and (min-width: 700px) {
+    nav {
+        h1 {
+            font-size: 2.2rem;
+        }
+        button {
+            font-size: medium;
+            width: 10rem;
+            height: 4rem;
+        }
     }
-    .library-active {
-      background: rgb(65, 65, 65);
-      color: white;
-    }
-  }
+}
+
+@media screen and (max-width: 768px) {
+	nav {
+		button {
+			z-index: 10;
+		}
+	}
+}
+
+@media screen and (max-width: 541px) {
+	nav {
+		h1 {
+			font-size: 1.3rem;
+        }
+        button {
+            width: 5rem;
+        }
+	}
+}
