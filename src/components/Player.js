@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function Player({
-	currentSong: { audio },
+	currentSong: { audio, color },
 	songs,
 	setCurrentSong,
 	isPlayiyg,
@@ -19,6 +19,7 @@ export default function Player({
 	const [songInfo, setSongInfo] = useState({
 		current: 0,
 		duration: 0,
+		animationPercentage: 0,
 	});
 
 	// * Grabbing html audio element using useRef()
@@ -76,10 +77,17 @@ export default function Player({
 
 	// * Setting song time
 	function timeUpdateHandler(e) {
+		const current = e.target.currentTime;
+		const duration = e.target.duration;
+		const roundedCurrent = Math.round(current);
+		const roundedDuration = Math.round(duration);
+		const percentage = Math.round((roundedCurrent / roundedDuration) * 100);
+		
 		setSongInfo({
 			...songInfo,
-			current: e.target.currentTime,
-			duration: e.target.duration,
+			current: current,
+			duration:duration,
+			animationPercentage: percentage,
 		});
 	}
 
@@ -89,11 +97,18 @@ export default function Player({
 		setSongInfo({ ...songInfo, current: e.target.value });
 	}
 
+	const trackAnim = {
+		transform: `translateX(${songInfo.animationPercentage}%)`,
+	  };
+
+
 	return (
 		<div className='player'>
 			<div className='time-control'>
 				<p>{getTime(songInfo.current)}</p>
-				<div className='track'>
+				<div style={{
+            background: `linear-gradient(to right, ${color[0]},${color[1]})`,
+          }} className='track'>
 					<input
 						type='range'
 						onChange={dragHandler}
@@ -101,9 +116,7 @@ export default function Player({
 						max={songInfo.duration ? songInfo.duration : 0}
 						value={songInfo.current}
 					/>
-					<div className="animate-track">
-						
-					</div>
+					 <div style={trackAnim} className="animate-track"></div>
 				</div>
 
 				<p>{getTime(songInfo.duration || 0)}</p>
