@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Song({ song: { name, artist, cover } }) {
 	return (
 		<div className='song-container'>

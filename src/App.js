@@ -20,17 +20,11 @@ function App() {
 			handleChange(event);
 		});
 	});
-
-	const handleChange = (event) => {
-		if (event.code === 'Space') debouncedSave();
-	};
-
-
 	function playHandle() {
 		isPlaying = isPlaying ? false : true;
 		setIsPlaying(isPlaying);
 	}
-	
+	// eslint-disable-next-line
 	const debouncedSave = useCallback(
 		debounce(
 			playHandle,
@@ -38,6 +32,12 @@ function App() {
 		),
 		[]
 	);
+	const handleChange = (event) => {
+		if (event.code === 'Space') debouncedSave();
+	};
+
+
+
 	return (
 		<div className={`App ${libraryStatus ? 'library-active' : ''}`}>
 			<Nav

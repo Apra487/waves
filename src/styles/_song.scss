@@ -19,6 +19,7 @@
 
 @media screen and (max-width: 1028px) and (min-width: 700px) {
 	.song-container {
+        min-height: 55vh;
 		img {
 			width: 45%;
 		}
@@ -36,6 +37,7 @@
 
 @media screen and (max-width: 800px) {
 	.song-container {
+        min-height: 60vh;
 		img {
 			width: 60%;
         }
@@ -49,7 +51,7 @@
 
 @media screen and (max-width: 541px) {
 	.song-container {
-        
+        min-height: 50vh;
         h2{
             font-size: 1.3rem;
         }

@@ -82,7 +82,7 @@ export default function Player({
 		const roundedCurrent = Math.round(current);
 		const roundedDuration = Math.round(duration);
 		const percentage = Math.round((roundedCurrent / roundedDuration) * 100);
-		
+
 		setSongInfo({
 			...songInfo,
 			current: current,
@@ -126,7 +126,7 @@ export default function Player({
 				<FontAwesomeIcon
 					onClick={() => skipTrackHandler('skip-back')}
 					className='skip-back'
-					size='3x'
+					size='2x'
 					icon={faAngleLeft}
 				/>
 				<FontAwesomeIcon
@@ -138,7 +138,7 @@ export default function Player({
 				<FontAwesomeIcon
 					onClick={() => skipTrackHandler('skip-forward')}
 					className='skip-forward'
-					size='3x'
+					size='2x'
 					icon={faAngleRight}
 				/>
 			</div>
