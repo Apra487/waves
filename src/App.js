@@ -44,9 +44,9 @@ function App() {
 				libraryStatus={libraryStatus}
 				setLibraryStatus={setLibraryStatus}
 			/>
-			<Song song={currentSong} />
+			<Song song={currentSong} isPlaying={isPlaying}/>
 			<Player
-				isPlayiyg={isPlaying}
+				isPlaying={isPlaying}
 				setIsPlaying={setIsPlaying}
 				currentSong={currentSong}
 				setCurrentSong={setCurrentSong}

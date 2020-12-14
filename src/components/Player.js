@@ -11,7 +11,7 @@ export default function Player({
 	currentSong: { audio, color },
 	songs,
 	setCurrentSong,
-	isPlayiyg,
+	isPlaying,
 	setIsPlaying,
 }) {
 	// * state
@@ -26,15 +26,15 @@ export default function Player({
 	const audioRef = useRef(null);
 
 	// * Implementing play and pause keyboard event
-	if (isPlayiyg) {
+	if (isPlaying) {
 		audioRef.current.play().catch((e) => console.log());
 	} else if (audioRef.current) {
 		audioRef.current.pause();
 	}
 
 	function playSongHandler() {
-		setIsPlaying(!isPlayiyg);
-		if (isPlayiyg) {
+		setIsPlaying(!isPlaying);
+		if (isPlaying) {
 			audioRef.current.pause();
 		} else {
 			audioRef.current.play();
@@ -133,7 +133,7 @@ export default function Player({
 					onClick={playSongHandler}
 					className='play'
 					size='2x'
-					icon={isPlayiyg ? faPause : faPlay}
+					icon={isPlaying ? faPause : faPlay}
 				/>
 				<FontAwesomeIcon
 					onClick={() => skipTrackHandler('skip-forward')}
@@ -149,6 +149,7 @@ export default function Player({
 				ref={audioRef}
 				src={audio}
 			></audio>
+			
 		</div>
 	);
 }
