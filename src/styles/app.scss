@@ -2,30 +2,38 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	
 }
 
 body {
 	font-family: 'Lato', sans-serif;
 }
 
-h1, h2{
+h1,
+h2 {
 	color: rgb(71, 71, 71);
 }
 
-h3,h4{
+h3,
+h4 {
 	color: rgb(100, 100, 100);
 	font-weight: 400;
 }
 
 .App {
 	transition: all 0.5s ease;
-  }
-  .library-active {
+}
+.library-active {
 	margin-left: 30%;
-  }
-  
+}
+
+
+@media screen and (max-width: 1028px) and (min-width: 700px) {
+	.library-active {
+		margin-left: 40%;
+	}
+}
+
 @import './player';
-@import './song'; 
+@import './song';
 @import './Libraray';
-@import './nav'
+@import './nav';
