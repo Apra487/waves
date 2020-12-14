@@ -39,7 +39,7 @@ function App() {
 		[]
 	);
 	return (
-		<div className={`App ${libraryStatus ? 'library-active' : ''}`}>
+		<div className={`App `}>
 			<Nav
 				libraryStatus={libraryStatus}
 				setLibraryStatus={setLibraryStatus}
