@@ -11,8 +11,11 @@
         justify-content: center;
         width: 40%;
         input {
-            padding: 1rem 0rem;
+            // padding: 1rem 0rem;
             width: 90%;
+            -webkit-appearance: none;
+            background: transparent;
+            cursor: pointer;
         }
         p {
             padding: 1.5rem;
@@ -25,11 +28,27 @@
         align-items: center;
 
         svg {
-            padding: 0.2rem;
+            // padding: 0.2rem;
             cursor: pointer;
         }
     }
 
+}
+
+input[type='range']:focus{
+    outline: none;
+}
+input[type='range']::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background: red;
+}
+
+.track {
+    background: coral;
+    width: 90%;
+    height: 1rem;
 }
 
 

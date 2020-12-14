@@ -25,8 +25,11 @@ export default function Player({
 	const audioRef = useRef(null);
 
 	// * Implementing play and pause keyboard event
-	if (isPlayiyg) audioRef.current.play().catch((e) => console.log(e));
-	else if (audioRef.current) audioRef.current.pause();
+	if (isPlayiyg) {
+		audioRef.current.play().catch((e) => console.log());
+	} else if (audioRef.current) {
+		audioRef.current.pause();
+	}
 
 	function playSongHandler() {
 		setIsPlaying(!isPlayiyg);
@@ -49,7 +52,6 @@ export default function Player({
 
 	// * Implementing pagination
 	function skipTrackHandler(direction) {
-
 		currentActive();
 
 		if (direction === 'skip-forward') {
@@ -57,8 +59,7 @@ export default function Player({
 			if (currentIndex > songs.length - 1) currentIndex = 0;
 		} else {
 			setIndex(--currentIndex);
-			if (currentIndex < 0) currentIndex =  songs.length - 1;
-			
+			if (currentIndex < 0) currentIndex = songs.length - 1;
 		}
 		setCurrentSong(songs[currentIndex]);
 		songs[currentIndex].active = true;
@@ -92,13 +93,19 @@ export default function Player({
 		<div className='player'>
 			<div className='time-control'>
 				<p>{getTime(songInfo.current)}</p>
-				<input
-					type='range'
-					onChange={dragHandler}
-					min={0}
-					max={songInfo.duration ? songInfo.duration : 0}
-					value={songInfo.current}
-				/>
+				<div className='track'>
+					<input
+						type='range'
+						onChange={dragHandler}
+						min={0}
+						max={songInfo.duration ? songInfo.duration : 0}
+						value={songInfo.current}
+					/>
+					<div className="animate-track">
+						
+					</div>
+				</div>
+
 				<p>{getTime(songInfo.duration || 0)}</p>
 			</div>
 
@@ -125,6 +132,7 @@ export default function Player({
 			<audio
 				onTimeUpdate={timeUpdateHandler}
 				onLoadedMetadata={timeUpdateHandler}
+				onEnded={() => skipTrackHandler('skip-forward')}
 				ref={audioRef}
 				src={audio}
 			></audio>
