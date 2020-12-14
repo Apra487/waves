@@ -29,7 +29,8 @@
 	display: flex;
 	flex-direction: row;
 	overflow: scroll;
-	cursor: pointer;
+    cursor: pointer;
+    transition: background 0.5s ease;
 	img {
 		width: 10rem;
 		padding: 1.5rem;
